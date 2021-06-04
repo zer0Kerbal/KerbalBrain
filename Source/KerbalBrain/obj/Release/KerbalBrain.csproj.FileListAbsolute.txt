@@ -1,4 +1,5 @@
-E:\fastLoad\Visual Studio Projects\KerbalBrain\KerbalBrain\bin\Release\KerbalBrain.dll
-E:\fastLoad\Visual Studio Projects\KerbalBrain\KerbalBrain\bin\Release\KerbalBrain.pdb
-E:\fastLoad\Visual Studio Projects\KerbalBrain\KerbalBrain\obj\Release\KerbalBrain.dll
-E:\fastLoad\Visual Studio Projects\KerbalBrain\KerbalBrain\obj\Release\KerbalBrain.pdb
+C:\KSPDev\Addon\Repo\KerbalBrain\source\KerbalBrain\bin\Release\KerbalBrain.xml
+C:\KSPDev\Addon\Repo\KerbalBrain\source\KerbalBrain\bin\Release\KerbalBrain.dll
+C:\KSPDev\Addon\Repo\KerbalBrain\source\KerbalBrain\obj\Release\KerbalBrain.csproj.AssemblyReference.cache
+C:\KSPDev\Addon\Repo\KerbalBrain\source\KerbalBrain\obj\Release\KerbalBrain.csproj.CoreCompileInputs.cache
+C:\KSPDev\Addon\Repo\KerbalBrain\source\KerbalBrain\obj\Release\KerbalBrain.dll
