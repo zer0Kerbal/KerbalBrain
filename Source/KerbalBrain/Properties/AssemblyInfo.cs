@@ -8,11 +8,11 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyTitle("KerbalBrain")]
 [assembly: AssemblyDescription("KSP mod that puts a Kerbal Engineer's brain in a box.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("cybercritics")]
+[assembly: AssemblyCompany("KGEx, zer0Kerbal, cybercritics")]
 [assembly: AssemblyProduct("KerbalBrain")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright ©  2016, 2021")]
 [assembly: AssemblyTrademark("")]
-[assembly: AssemblyCulture("")]
+[assembly: AssemblyCulture("neutral")]
 
 // Setting ComVisible to false makes the types in this assembly not visible 
 // to COM components.  If you need to access a type in this assembly from 
@@ -32,7 +32,7 @@ using System.Runtime.InteropServices;
 // You can specify all the values or you can default the Build and Revision Numbers 
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("0.1.3.0")]
-[assembly: AssemblyFileVersion("0.1.3.0")]
+[assembly: AssemblyVersion("0.1.4.0")]
+[assembly: AssemblyFileVersion("0.1.4.0")]
 [assembly: KSPAssembly("KBrain", 0, 1)]
 [assembly: KSPAssemblyDependency("KIS", 1, 2)]
