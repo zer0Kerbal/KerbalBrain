@@ -1,0 +1,39 @@
+{
+	"NAME": "KerbalBrain",
+	"URL": "https://raw.githubusercontent.com/zer0Kerbal/KerbalBrain/master/GameData/KerbalBrain/KerbalBrain.version",
+	"CHANGE_LOG_URL": "https://raw.githubusercontent.com/zer0Kerbal/KerbalBrain/master/changelog.md",
+	"DOWNLOAD": "https://github.com/zer0Kerbal/KerbalBrain/releases",
+	"GITHUB":
+	{
+		"USERNAME": "zer0Kerbal",
+		"REPOSITORY": "KerbalBrain",
+		"ALLOW_PRE_RELEASE": false
+	},
+	"VERSION":{
+    "MAJOR":0,
+    "MINOR":1,
+    "PATCH":4,
+    "BUILD":0
+  },
+  "KSP_VERSION":{
+    "MAJOR":1,
+    "MINOR":7,
+    "PATCH":3
+  },
+  "KSP_VERSION_MIN":{
+    "MAJOR":1,
+    "MINOR":4,
+    "PATCH":5
+  },
+  "KSP_VERSION_MAX":{
+    "MAJOR":1,
+    "MINOR":9,
+    "PATCH":99
+  },
+	"INSTALL_LOC" :
+	{
+		"NAME" :		  "KerbalBrain",
+		"DIRECTORY" :	 "KerbalBrain"
+	}
+}
+
