@@ -1,17 +1,23 @@
-﻿using UnityEngine;
-using KIS;
+﻿using KIS;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace KerbalBrain
 {
-    public class BrainModule : PartModule
+    /// <summary>
+    ///   <br />
+    /// </summary>
+    public class BrainMo1dule : PartModule
     {
         private bool activated = false;
         private ModuleKISInventory.InventoryType originalInventory = ModuleKISInventory.InventoryType.Container;
 
+        /// <summary>The original type</summary>
         [KSPField(isPersistant = true, guiActive = false)]
         public int originalType = (int)VesselType.Probe;
-        
+
+        /// <summary>Called when [start].</summary>
+        /// <param name="state">The state.</param>
         public override void OnStart(StartState state)
         {
             print("[KBrain] OnStart");
@@ -35,6 +41,8 @@ namespace KerbalBrain
             bones[0] = rightArm;
             bones[1] = leftArm;
 
+
+
             skin.bones = bones;
 
             //set initial inventory
@@ -50,9 +58,11 @@ namespace KerbalBrain
         }
 
         //on/off switch for brain/eva mode
-        [KSPField(guiActive = true, guiActiveEditor =true, guiName = "Brain Status", isPersistant = true), UI_Toggle(disabledText = "Off", enabledText = "On")]
+        /// <summary>The is activated</summary>
+        [KSPField(guiActive = true, guiActiveEditor = true, guiName = "Brain Status", isPersistant = true), UI_Toggle(disabledText = "Off", enabledText = "On")]
         public bool isActivated = false;
-        
+
+        /// <summary>Brains the switch.</summary>
         public void BrainSwitch()
         {
             if (!activated)
@@ -64,6 +74,7 @@ namespace KerbalBrain
 
                 //get a engineer on-board
                 ProtoCrewMember pcm = new ProtoCrewMember(ProtoCrewMember.KerbalType.Unowned);
+                // crewMember.type = ProtoCrewMember.KerbalType.Crew;
 
                 //adding "brain" to module, if one is not there already
                 if (this.part.protoModuleCrew.Count == 0)
@@ -73,16 +84,18 @@ namespace KerbalBrain
                     int abort = 0;
                     while (!foundRepairSkill)
                     {
-                        pcm = HighLogic.CurrentGame.CrewRoster.GetNewKerbal(ProtoCrewMember.KerbalType.Unowned);
-                        pcm.name = "Brain";
+                        // pcm = HighLogic.CurrentGame.CrewRoster.GetNewKerbal(ProtoCrewMember.KerbalType.Unowned);
+                        pcm.type = ProtoCrewMember.KerbalType.Unowned;
+                        // pcm.name = "Brain";
+                        pcm.ChangeName("Brain");
 
                         //check for skill
                         foreach (var expEffect in pcm.experienceTrait.Effects)
                             if (expEffect.ToString().ToLower().IndexOf("repairskill") != -1)
                                 foundRepairSkill = true;
 
-                        //check so we don't loop indefinately
-                        if(abort++ > 128)
+                        //check so we don't loop indefinitely
+                        if (abort++ > 128)
                         {
                             this.isActivated = activated;
                             print("[KBrain] Couldn't find a brain with RepairSkill, aborting.");
@@ -95,7 +108,7 @@ namespace KerbalBrain
                 }
 
                 //change to eva
-                if(this.vessel.vesselType != VesselType.EVA)
+                if (this.vessel.vesselType != VesselType.EVA)
                     this.originalType = (int)this.vessel.vesselType;
                 this.vessel.vesselType = VesselType.EVA;
 
@@ -109,7 +122,7 @@ namespace KerbalBrain
                 inventory.Events["ShowInventory"].active = true;
 
                 print("[KBrain] Vessel Eva: " + this.vessel.isEVA);
-                
+
                 this.activated = true;
             }
             else
@@ -117,7 +130,7 @@ namespace KerbalBrain
                 //change back from eva
                 if (this.originalType != (int)VesselType.EVA)
                     this.part.vessel.vesselType = (VesselType)this.originalType;
-                else 
+                else
                     this.part.vessel.vesselType = VesselType.Probe;
 
                 //set inventory back to what it was
@@ -131,7 +144,7 @@ namespace KerbalBrain
                 foreach (ModuleKISInventory inv in list)
                     if (inv.part != this.part)//skip the other part inventory
                         inv.Events["ShowInventory"].active = true;
-                
+
                 this.activated = false;
             }
         }
